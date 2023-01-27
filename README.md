@@ -1,4 +1,2 @@
-# ProtoBot
-Potential all in one utility bot for a server in discord, as of now exclusive use in Cove Ahead
-
-It has been a long time I have used github so I am testing push
+##Devloper Branch ##
+This is a Devlop branch All development and minor release will be done here. And majorly will be realed on main once tested.
