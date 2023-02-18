@@ -12,3 +12,6 @@ This is a Devlop branch All development and minor release will be done here. And
   - Server hooks
 - Warframe (TBD)
 - Genshin Impact (TBD)
+
+repo link: https://github.com/n0ts0lazy/ProtoBot.git
+
