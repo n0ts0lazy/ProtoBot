@@ -1,7 +1,7 @@
 {
   "name": "protobot",
   "version": "1.0.0",
-  "description": "Discord Bot",
+  "description": "This is a Devlop branch All development and minor release will be done here. And majorly will be realed on main once tested.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/n0ts0lazy/ProtoBot.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -17,6 +18,15 @@
   },
   "homepage": "https://github.com/n0ts0lazy/ProtoBot#readme",
   "dependencies": {
-    "discord.js": "^14.7.1"
-  }
+    "@discordjs/rest": "^1.5.0",
+    "@discordjs/voice": "^0.14.0",
+    "bufferutil": "^4.0.7",
+    "discord-api-types": "^0.37.33",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "erlpack": "github:discord/erlpack",
+    "fund": "^1.0.0",
+    "utf-8-validate": "^6.0.2"
+  },
+  "devDependencies": {}
 }
