@@ -11,7 +11,7 @@ const commandFile= fs.readdirSync('./src/commands').filter(file=>file.endsWith('
 
 for (const file of commandFile) {
     const command = require(path.join(__dirname,'commands',file));      //it works
-    console.log(`./src/commands/${file}`);
+    console.log(`loading ./src/commands/${file}`);
     //const command = require(fs.readdirSync(`./src/commands/${file}`).filter(file=>file.endsWith('.js')));        //it doesnt work for some reason need explaination tnx
     commands.push(command.data.toJSON());
 }

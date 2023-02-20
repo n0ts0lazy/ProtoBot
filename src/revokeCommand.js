@@ -4,7 +4,9 @@ const {authToken, clientID} = process.env;
 
 const rest = new REST({ version: '10' }).setToken(authToken);
 
+const tokenID = 'tokenID';
+
 // for global commands
-rest.delete(Routes.applicationCommand(clientID, 'command ID here'))
-	.then(() => console.log('Successfully deleted application command'))
+rest.delete(Routes.applicationCommand(clientID, tokenID))
+	.then(() => console.log('Successfully deleted application command with token ID:',tokenID))
 	.catch(console.error);
