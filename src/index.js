@@ -10,20 +10,37 @@ const client = new Client({ intents:['Guilds','GuildMessages','GuildVoiceStates'
 
 console.log('logged in as ', authToken)
 
-
-const commandFile = fs.readdirSync(`./src/commands`).filter(file => file.endsWith('.js'));
-
 client.commands = new Collection();
 
-for (const file of commandFile){
-    const command = require(path.join(__dirname,'commands',file));
-    console.log(file);
-    client.commands.set(command.data.name, command);
-}
+var buildState = 'Live'     //buildState is for switching between Live and Beta build of bot easier to deploy so that no need to keep commenting out the code to change build
 
-client.on('ready',()=> {
-    client.user.setActivity(`This piece of shit is alive for the moment- Lazy (currenty working)`);
-});
+switch (buildState){
+    case 'Live':
+        //Live Command Deployment
+        const commandFile = fs.readdirSync(`./src/commands`).filter(file => file.endsWith('.js'));
+        for (const file of commandFile){
+            const command = require(path.join(__dirname,'commands',file));
+            console.log(file);
+            client.commands.set(command.data.name, command);
+        }
+        client.on('ready',()=> {
+            client.user.setActivity(`Valorant Randomizer is active test it out in #command-the-army using vrandom command`);
+        });
+}
+switch (buildState){
+    case 'Beta':
+        //Beta Command Deployment
+        const commandFile = fs.readdirSync(`./src/betacommands`).filter(file => file.endsWith('.js'));
+        for (const file of commandFile){
+            const command = require(path.join(__dirname,'betacommands',file));
+            console.log(file);
+            client.commands.set(command.data.name, command);
+        }
+        client.on('ready',()=> {
+            client.user.setActivity(`This piece of shit is alive for the moment- Lazy (currenty working)`);
+        });
+        
+}
 
 client.on(Events.InteractionCreate, async interation => {
     if (!interation.isChatInputCommand()) return;
