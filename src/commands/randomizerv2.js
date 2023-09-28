@@ -35,10 +35,10 @@ module.exports= {
     async execute(interaction){
         const command = interaction.options.getSubcommand();
         const agents = [
-            'Astra',    'Brimstone',    'Harbour',  'Omen', 'Viper',            
-            'Jett',     'Neon',         'Phoenix',  'Raze', 'Reyna',    'Yoru',
-            'Breach',   'Fade',         'KAY/O',    'Skye', 'Sova',       
-            'Chamber',  'Cypher',       'Killjoy',  'Sage']
+            'Astra',    'Brimstone',    'Harbour',  'Omen',     'Viper',            
+            'Jett',     'Neon',         'Phoenix',  'Raze',     'Reyna',    'Yoru',
+            'Breach',   'Fade',         'Gekko',    'KAY/O',    'Skye',    'Sova',       
+            'Chamber',  'Cypher',       'Deadlock', 'Killjoy',  'Sage']
         const roles = [
             'Controller',
             'Duelist',

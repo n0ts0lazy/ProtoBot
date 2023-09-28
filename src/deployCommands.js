@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require ('node:path');
 
 require('dotenv').config()
-const {authToken, clientID} = process.env;
+const {protobotAuthToken, protobotClientID} = process.env;
 
 const commands = [];
 
@@ -21,12 +21,12 @@ switch (buildState){
         }
 
         console.log('Importing:', commands.length , 'applications (/) commands.');
-        const rest =  new REST({version: '10'}).setToken(authToken);
+        const rest =  new REST({version: '10'}).setToken(protobotAuthToken);
         
         (async () => {
             try {
                 const data = await rest.put(
-                    Routes.applicationCommands(clientID),
+                    Routes.applicationCommands(protobotClientID),
                     {body: commands},
                 );
                 console.log('Successfully loaded:', data.length, 'application (/)  commands.');
@@ -49,12 +49,12 @@ switch (buildState){
         }
 
         console.log('Importing:', commands.length, 'beta commands.');
-        const rest = new REST({ version: '10' }).setToken(authToken);
+        const rest = new REST({ version: '10' }).setToken(protobotAuthToken);
 
         (async () => {
             try {
                 const data = await rest.put(
-                    Routes.applicationCommands(clientID),
+                    Routes.applicationCommands(protobotClientID),
                     { body: commands },
                 );
                 console.log('Successfully loaded:', data.length, 'beta commands.');

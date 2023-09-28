@@ -1,14 +1,15 @@
 const {Client,Collection, Events, GatewayInternBits} = require ('discord.js');
+const {joinVoiceChannel} = require ('@discordjs/voice')
 const fs = require('node:fs');
 const path = require ('node:path');
 
 
 require('dotenv').config()
-const {authToken, clientID} = process.env;
+const {protobotAuthToken, protobotClientID} = process.env;
 
 const client = new Client({ intents:['Guilds','GuildMessages','GuildVoiceStates','GuildEmojisAndStickers'] });
 
-console.log('logged in as ', authToken)
+console.log('logged in as ', protobotAuthToken)
 
 client.commands = new Collection();
 
@@ -55,4 +56,4 @@ client.on(Events.InteractionCreate, async interation => {
 });
 
 
-client.login(authToken);
+client.login(protobotAuthToken);
