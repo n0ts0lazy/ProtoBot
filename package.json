@@ -26,6 +26,7 @@
     "dropbox": "^10.34.0",
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
+    "package.json": "^0.0.0",
     "ytdl-core": "^4.11.2"
   }
 }
