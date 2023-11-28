@@ -3,7 +3,7 @@ const {SlashCommandBuilder} = require ('discord.js')
 module.exports= {
 
     data: new SlashCommandBuilder()
-    .setName('vrandom')
+    .setName('vrandom_old')
     .setDescription('Original Randomizer Bot has been integrated into ProtoBot')
     .addSubcommand(command => command .setName('agent')
         .setDescription('Valorant Agent selected from one of 20 available agents')
