@@ -25,7 +25,7 @@ switch (buildState){
             client.commands.set(command.data.name, command);
         }
         client.on('ready',()=> {
-            client.user.setActivity(`Valorant Randomizer is active test it out in #command-the-army using vrandom command`);
+            client.user.setActivity(`Protobot Release V1.1 is active. Test it out in #command-the-army 😏`);
         });
 }
 switch (buildState){
