@@ -36,8 +36,8 @@ module.exports= {
         const command = interaction.options.getSubcommand();
         const agents = [
             'Astra',    'Brimstone',    'Harbour',  'Omen',     'Viper',            
-            'Jett',     'Neon',         'Phoenix',  'Raze',     'Reyna',    'Yoru',
-            'Breach',   'Fade',         'Gekko',    'KAY/O',    'Skye',    'Sova',       
+            'Iso',      'Jett',         'Neon',     'Phoenix',  'Raze',     'Reyna',    'Yoru',
+            'Breach',   'Fade',         'Gekko',    'KAY/O',    'Skye',     'Sova',       
             'Chamber',  'Cypher',       'Deadlock', 'Killjoy',  'Sage']
         const roles = [
             'Controller',
@@ -48,7 +48,7 @@ module.exports= {
             'Ares',     'Odin',
             'Bucky',    'Judge',    
             'Bulldog',  'Guardian', 'Phantom',  'Vandal',
-            'Marshal',  'Operator',
+            'Marshal',  'Operator', 'Outlaw',
             'Spectre',  'Stinger']
         const secondaryArmoury = [
             'Classic',
