@@ -1,5 +1,4 @@
 package-lock.json
 node_modules
 .env
-run.bat
-pythonPackage
+Protobot Luancher.bat
