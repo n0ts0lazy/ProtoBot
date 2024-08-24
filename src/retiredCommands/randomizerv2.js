@@ -1,3 +1,6 @@
+//retired slash command 
+//retirement date: 03/27/2024
+
 const {SlashCommandBuilder} = require ('discord.js')
 
 module.exports= {

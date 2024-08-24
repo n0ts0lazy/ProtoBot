@@ -20,7 +20,7 @@ const buildState = 'Live'; // Change this according to your build state
 switch (buildState) {
     case 'Live':
         // Live Command Deployment
-        const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
+        const commandFiles = fs.readdirSync('./ProtoBot/src/commands').filter(file => file.endsWith('.js'));
         console.log('Loading commands')
         for (const file of commandFiles) {
             const command = require(path.join(__dirname, 'commands', file));
@@ -34,7 +34,7 @@ switch (buildState) {
         break;
     case 'Beta':
         // Beta Command Deployment
-        const betaCommandFiles = fs.readdirSync('./src/betacommands').filter(file => file.endsWith('.js'));
+        const betaCommandFiles = fs.readdirSync('./ProtoBot/src/betacommands').filter(file => file.endsWith('.js'));
         console.log('Loading BETA commands')
         for (const file of betaCommandFiles) {
             const command = require(path.join(__dirname, 'betacommands', file));
@@ -60,7 +60,7 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 });
 
- //Execute the messageTracker module for every message event
+//Execute the messageTracker module for every message event
 //client.on(Events.MessageCreate, message => {
 //    messageTracker.execute(message);
 //});

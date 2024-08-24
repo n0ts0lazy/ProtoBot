@@ -3,10 +3,10 @@ const { createCanvas, loadImage } = require('canvas');
 const fs = require('fs');
 
 const agents = [
-    'Astra', 'Brimstone', 'Harbor', 'Omen', 'Viper',
+    'Astra', 'Brimstone', 'Clove', 'Harbor', 'Omen', 'Viper',
     'Iso', 'Jett', 'Neon', 'Phoenix', 'Raze', 'Reyna', 'Yoru',
     'Breach', 'Fade', 'Gekko', 'KAY/O', 'Skye', 'Sova',
-    'Chamber', 'Cypher', 'Deadlock', 'Killjoy', 'Sage'
+    'Chamber', 'Cypher', 'Deadlock', 'Killjoy', 'Sage', 'Vyse'
 ]
 const roles = [
     'Controller',
@@ -69,7 +69,7 @@ module.exports = {
         // Randomizer pool
 
         // Bot Logo
-        const bot = new AttachmentBuilder('src/assets/proto.png');
+        const bot = new AttachmentBuilder('ProtoBot/src/assets/proto.png');
 
         // Randomizer Function
 
@@ -97,12 +97,12 @@ module.exports = {
                 // Randomize Agent 
                 if (resultAgent === 'KAY/O') {
                     exceptionAgent = 'KAYO';
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(resultAgent);
                 }
                 else {
                     exceptionAgent = resultAgent;
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(exceptionAgent);
                 }
 
@@ -118,7 +118,7 @@ module.exports = {
                 break;
 
             case 'role':
-                roleSelected = new AttachmentBuilder(`src/assets/valorant/role/${resultRole}.png`);
+                roleSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/role/${resultRole}.png`);
                 var sendRole = String(resultRole);
 
                 const embedRole = new EmbedBuilder()
@@ -133,7 +133,7 @@ module.exports = {
                 break;
 
             case 'primary-gun':
-                primaryselected = new AttachmentBuilder(`src/assets/valorant/gun/${resultPrimary}.png`);
+                primaryselected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/gun/${resultPrimary}.png`);
                 var sendPrimary = String(resultPrimary);
 
                 const embedPrimary = new EmbedBuilder()
@@ -148,7 +148,7 @@ module.exports = {
                 break;
 
             case 'secondary-gun':
-                secondaryselected = new AttachmentBuilder(`src/assets/valorant/gun/${resultSecondary}.png`);
+                secondaryselected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/gun/${resultSecondary}.png`);
                 var sendSecondary = String(resultSecondary);
 
                 const embedSecondary = new EmbedBuilder()
@@ -163,7 +163,7 @@ module.exports = {
                 break;
 
             case 'gun':
-                gunselected = new AttachmentBuilder(`src/assets/valorant/gun/${resultGun}.png`);
+                gunselected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/gun/${resultGun}.png`);
                 var sendGun = String(resultGun);
 
                 const embedGun = new EmbedBuilder()
@@ -180,21 +180,21 @@ module.exports = {
             case 'agent-gun':
                 if (resultAgent === 'KAY/O') {
                     exceptionAgent = 'KAYO';
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(resultAgent);
                 } else {
                     exceptionAgent = resultAgent;
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(exceptionAgent);
                 }
 
-                gunselected = new AttachmentBuilder(`src/assets/valorant/gun/${resultGun}.png`);
+                gunselected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/gun/${resultGun}.png`);
                 var sendGun = String(resultGun);
 
                 try {
                     // Load agent and gun images
-                    const agentImage = await loadImage(`src/assets/valorant/agent/${exceptionAgent}.png`);
-                    const gunImage = await loadImage(`src/assets/valorant/gun/${resultGun}.png`);
+                    const agentImage = await loadImage(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
+                    const gunImage = await loadImage(`ProtoBot/src/assets/valorant/gun/${resultGun}.png`);
 
                     // Create a canvas and draw the agent and gun images with outline and drop shadow, scaling gunImage to 1.25x
                     const canvas = createCanvas(Math.max(agentImage.width, gunImage.width), agentImage.height + gunImage.height);
@@ -235,7 +235,7 @@ module.exports = {
                     //ctx.drawImage(gunImage, 0, agentImage.height);
 
                     // Save the composite image as a temporary file
-                    const relativeCachePath = 'src/assets/cache';
+                    const relativeCachePath = 'ProtoBot/src/assets/cache';
                     const tempFilePath = `${relativeCachePath}/tempComposite.png`;
 
                     // Ensure the cache directory exists
@@ -273,25 +273,25 @@ module.exports = {
             case 'whole-loadout':
                 if (resultAgent === 'KAY/O') {
                     exceptionAgent = 'KAYO';
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(resultAgent);
                 } else {
                     exceptionAgent = resultAgent;
-                    agentSelected = new AttachmentBuilder(`src/assets/valorant/agent/${exceptionAgent}.png`);
+                    agentSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
                     var sendAgent = String(exceptionAgent);
                 }
 
-                gunselected = new AttachmentBuilder(`src/assets/valorant/gun/${resultGun}.png`);
+                gunselected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/gun/${resultGun}.png`);
                 var sendGun = String(resultGun);
 
-                roleSelected = new AttachmentBuilder(`src/assets/valorant/role/${resultRole}.png`);
+                roleSelected = new AttachmentBuilder(`ProtoBot/src/assets/valorant/role/${resultRole}.png`);
                 var sendRole = String(resultRole);
 
                 try {
                     // Load agent and gun images
-                    const agentImage = await loadImage(`src/assets/valorant/agent/${exceptionAgent}.png`);
-                    const gunImage = await loadImage(`src/assets/valorant/gun/${resultGun}.png`);
-                    const roleImage = await loadImage(`src/assets/valorant/role/${resultRole}.png`);
+                    const agentImage = await loadImage(`ProtoBot/src/assets/valorant/agent/${exceptionAgent}.png`);
+                    const gunImage = await loadImage(`ProtoBot/src/assets/valorant/gun/${resultGun}.png`);
+                    const roleImage = await loadImage(`ProtoBot/src/assets/valorant/role/${resultRole}.png`);
 
                     // Create a canvas and draw the agent and gun images with outline and drop shadow, scaling gunImage to 1.25x
                     const canvas = createCanvas(Math.max(agentImage.width, gunImage.width), agentImage.height + gunImage.height);
@@ -333,7 +333,7 @@ module.exports = {
                     //ctx.drawImage(gunImage, 0, agentImage.height);
 
                     // Save the composite image as a temporary file
-                    const relativeCachePath = 'src/assets/cache';
+                    const relativeCachePath = 'ProtoBot/src/assets/cache';
                     const tempFilePath = `${relativeCachePath}/tempComposite.png`;
 
                     // Ensure the cache directory exists
